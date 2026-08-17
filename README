@@ -1,2 +1,26 @@
+A minimal yet complete CI/CD playground with GitHub Actions.
+
+Real-world workflows including:
+- Multi-branch strategy (feature → develop → release → main)
+- Testing, linting, and code quality gates
+- Docker build & push to GHCR
+- Deploy to Vercel / Railway / Alibaba Cloud / Kubernetes
+- Automated semantic versioning & changelog
+- Failure notifications (Slack / WeChat / Feishu)
+
+Personal learning repo, kept up-to-date for interviews and review.
+
+## PR practice
+
+Learning GitHub PR flow on a side branch.
+
+## PR practice round 2
+
+Side-branch edit for learning.
+
+## Review round 1
+
+ First review pass.
+
 ##
  add worktree feat
