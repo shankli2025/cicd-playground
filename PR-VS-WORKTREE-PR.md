@@ -10,6 +10,8 @@
 | 首次推送 | `git push -u origin HEAD` | 同左 |
 | 开 PR | `gh pr create` | 同左 |
 | 看编号 | `gh pr view` 或 `gh pr list` | 同左（须在对应支线目录，或 `gh pr view <ID>`） |
+| 合完后列表为空 | `gh pr list` 只显示 OPEN | 同左；worktree 合完仍在第二桌时更容易误以为「没了」 |
+| 查已合并的 PR | `gh pr list --state merged` | **同左**（合完要用这条，不要只用 `gh pr list`） |
 | 合并 | `gh pr merge <ID> --merge --delete-branch` | `gh pr merge <ID> --merge --delete-branch` |
 | 合完切回 main | `gh` 常自动切回并 fast-forward | 常失败（`main` 已在主桌占用），可忽略 |
 | 同步主线 | 多数情况不必再 `pull` | **必须回主目录** `git pull origin main` |
@@ -52,4 +54,17 @@ cd /Users/fwang/project/cicd-playground
 git pull origin main
 git worktree remove ../cicd-playground-xxx
 git branch -d practice/xxx
+```
+
+---
+
+## 合完看不到 PR？
+
+`gh pr list` **默认只列 OPEN**。合并后申请单变成 Merged，列表会空，**不是删掉了**。
+
+worktree 里合完人还在第二桌时尤其容易碰到：`gh pr list` 空白，以为单号丢了。
+
+```bash
+gh pr list --state merged    # 看已合并的（含编号）
+gh pr view <ID>              # 指定编号仍可查看
 ```
